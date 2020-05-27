@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/eobrain/passprint/issues"
   },
-  "homepage": "https://github.com/eobrain/passprint#readme"
+  "homepage": "https://github.com/eobrain/passprint#readme",
+  "devDependencies": {
+    "ava": "^3.8.2"
+  }
 }
