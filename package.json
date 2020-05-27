@@ -1,0 +1,23 @@
+{
+  "name": "passprint",
+  "version": "0.0.1",
+  "description": "For debugging functional-programming style, print value and pass it back.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eobrain/passprint.git"
+  },
+  "keywords": [
+    "debug",
+    "log"
+  ],
+  "author": "Eamonn O'Brien-Strain",
+  "license": "EPL-2.0",
+  "bugs": {
+    "url": "https://github.com/eobrain/passprint/issues"
+  },
+  "homepage": "https://github.com/eobrain/passprint#readme"
+}
