@@ -16,17 +16,16 @@ test('passthrough', t => {
 })
 
 test('print', t => {
-  let message
-  let value
-  const pp = PP((m, v) => {
-    message = m
-    value = v
+  const log = []
+  const pp = PP((message, value) => {
+    log.push({ message, value })
   })
 
   pp(999)
 
-  t.deepEqual(value, 999)
-  t.regex(message, /\|+test.js:[0-9]+:[0-9]+ [0-9]+ms/)
+  t.deepEqual(log.length, 1)
+  t.deepEqual(log[0].value, 999)
+  t.regex(log[0].message, /\|+test.js:[0-9]+:[0-9]+ [0-9]+ms/)
 })
 
 const zip = (v1, v2) => v1.map((x, i) => [x, v2[i]])
@@ -46,4 +45,12 @@ test('dotProductPP', t => {
   const a = [10, 100, 1000]
   const b = [2, 3, 5]
   t.deepEqual(dotProdPP(a, b), 5320)
+})
+
+test('console.log', t => {
+  const pp = PP(console.log)
+
+  const x = pp('hello on console.log')
+
+  t.deepEqual(x, 'hello on console.log')
 })
