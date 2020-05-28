@@ -1,4 +1,4 @@
-const pp = require('./index.js')
+const { pp, PP } = require('./index.js')
 
 const test = require('ava')
 
@@ -15,21 +15,18 @@ test('passthrough', t => {
   })
 })
 
-test.serial('print', t => {
+test('print', t => {
   let message
   let value
-  const oldLog = pp.log
-  pp.log = (m, v) => {
+  const pp = PP((m, v) => {
     message = m
     value = v
-  }
+  })
 
   pp(999)
 
   t.deepEqual(value, 999)
-  t.regex(message, /( |)+test.js:[0-9]+:[0-9]+ [0-9]+ms/)
-
-  pp.log = oldLog
+  t.regex(message, /\|+test.js:[0-9]+:[0-9]+ [0-9]+ms/)
 })
 
 const zip = (v1, v2) => v1.map((x, i) => [x, v2[i]])
