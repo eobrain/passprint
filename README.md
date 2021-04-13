@@ -17,7 +17,7 @@ const { pp } = require('passprint')
 or
 
 ```js
-import { pp } = from 'passprint'
+import { pp } from 'passprint'
 ```
 
 Then use can put `pp(expression)` around any expression in your code, and it will return the value of `expression` unchanged, with the side-affect of logging it.
