@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/eobrain/passprint#readme",
   "devDependencies": {
-    "ava": "^3.8.2"
+    "ava": "^5.2.0"
   }
 }
